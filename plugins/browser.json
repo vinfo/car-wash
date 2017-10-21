@@ -28,16 +28,7 @@
         "cordova-plugin-vibration": {
             "PACKAGE_NAME": "com.vinfo.carwash"
         },
-        "cordova-plugin-camera": {
-            "PACKAGE_NAME": "com.vinfo.carwash"
-        },
         "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "com.vinfo.carwash"
-        },
-        "de.appplant.cordova.plugin.local-notification": {
-            "PACKAGE_NAME": "com.vinfo.carwash"
-        },
-        "cordova-plugin-badge": {
             "PACKAGE_NAME": "com.vinfo.carwash"
         },
         "pushwoosh-cordova-plugin": {
@@ -48,9 +39,6 @@
         }
     },
     "dependent_plugins": {
-        "cordova-plugin-compat": {
-            "PACKAGE_NAME": "com.vinfo.carwash"
-        },
         "es6-promise-plugin": {
             "PACKAGE_NAME": "com.vinfo.carwash"
         }

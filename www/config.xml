@@ -5,7 +5,7 @@
     versionCode = "1"
     version     = "1.0.1"
     versionName = "1.0.1" >
-    <name>CarWash Colombia</name>
+    <name>CarWash</name>
     <description>
         Sistema de servicios de lavado de vehículos en Colombia.
     </description>
@@ -25,11 +25,8 @@
     <plugin name="cordova-plugin-device" version="1.1.6" />
     <plugin name="cordova-plugin-dialogs" version="1.3.3" />
     <plugin name="cordova-plugin-network-information" version="1.3.3" />
-    <plugin name="cordova-plugin-vibration" version="2.1.5" />  
-    <plugin name="cordova-plugin-camera" version="2.4.1" />
+    <plugin name="cordova-plugin-vibration" version="2.1.5" />
     <plugin name="cordova-plugin-x-socialsharing" version="5.2.0" />
-    <plugin name="de.appplant.cordova.plugin.local-notification" version="0.8.2" />
-    <plugin name="cordova-plugin-badge" version="0.8.2" />
     <plugin name="pushwoosh-cordova-plugin" version="7.0.7" />
 
     <!-- Define app icon for each platform. -->
