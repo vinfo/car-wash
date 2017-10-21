@@ -5,7 +5,7 @@
     versionCode = "1"
     version     = "1.0.1"
     versionName = "1.0.1" >
-    <name>BankU</name>
+    <name>CarWash Colombia</name>
     <description>
         Sistema de servicios de lavado de vehículos en Colombia.
     </description>
