@@ -1,0 +1,58 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.vinfo.carwash"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.vinfo.carwash"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.vinfo.carwash"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.vinfo.carwash"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.vinfo.carwash"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.vinfo.carwash"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.vinfo.carwash"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.vinfo.carwash"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.vinfo.carwash"
+        },
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.vinfo.carwash"
+        },
+        "cordova-plugin-badge": {
+            "PACKAGE_NAME": "com.vinfo.carwash"
+        },
+        "pushwoosh-cordova-plugin": {
+            "LOG_LEVEL": "DEBUG",
+            "IOS_FOREGROUND_ALERT_TYPE": "NONE",
+            "ANDROID_FOREGROUND_PUSH": "false",
+            "PACKAGE_NAME": "com.vinfo.carwash"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.vinfo.carwash"
+        },
+        "es6-promise-plugin": {
+            "PACKAGE_NAME": "com.vinfo.carwash"
+        }
+    }
+}

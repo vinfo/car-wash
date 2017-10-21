@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+    xmlns:gap = "http://phonegap.com/ns/1.0"
+    id        = "com.vinfo.carwash"
+    versionCode = "1"
+    version     = "1.0.1"
+    versionName = "1.0.1" >
+    <name>BankU</name>
+    <description>
+        Sistema de servicios de lavado de vehículos en Colombia.
+    </description>
+    <author email="victor.valencia@gmail.com" href="http://vinfoweb.com">
+        Vinfoweb Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+
+    <preference name="EnableViewportScale" value="true"/>
+    <preference name="orientation" value="portrait" />
+    <preference name="android-build-tool" value="gradle" />
+    
+    <plugin name="cordova-plugin-inappbrowser" spec="~1.7.1" />
+    <plugin name="cordova-plugin-whitelist" version="1.3.2" />
+    <plugin name="cordova-plugin-console" version="1.0.6" />
+    <plugin name="cordova-plugin-device" version="1.1.6" />
+    <plugin name="cordova-plugin-dialogs" version="1.3.3" />
+    <plugin name="cordova-plugin-network-information" version="1.3.3" />
+    <plugin name="cordova-plugin-vibration" version="2.1.5" />  
+    <plugin name="cordova-plugin-camera" version="2.4.1" />
+    <plugin name="cordova-plugin-x-socialsharing" version="5.2.0" />
+    <plugin name="de.appplant.cordova.plugin.local-notification" version="0.8.2" />
+    <plugin name="cordova-plugin-badge" version="0.8.2" />
+    <plugin name="pushwoosh-cordova-plugin" version="7.0.7" />
+
+    <!-- Define app icon for each platform. -->
+    <icon src="icon.png" />
+    <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:qualifier="ldpi" />
+    <icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:qualifier="mdpi" />
+    <icon src="res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:qualifier="hdpi" />
+    <icon src="res/icon/android/icon-96-xhdpi.png"  gap:platform="android"    gap:qualifier="xhdpi" />
+    <icon src="res/icon/ios/icon-57.png"            gap:platform="ios"        width="57" height="57" />
+    <icon src="res/icon/ios/icon-72.png"            gap:platform="ios"        width="72" height="72" />
+    <icon src="res/icon/ios/icon-57-2x.png"         gap:platform="ios"        width="114" height="114" />
+    <icon src="res/icon/ios/icon-72-2x.png"         gap:platform="ios"        width="144" height="144" />
+    <icon src="res/icon/ios/icon-120-2x.png"         gap:platform="ios"        width="120" height="120" />
+    <icon src="res/icon/ios/icon-76-2x.png"         gap:platform="ios"        width="76" height="76" />
+    <icon src="res/icon/ios/icon-152-2x.png"         gap:platform="ios"        width="152" height="152" />
+
+    <!-- Define app splash screen for each platform. -->
+    <gap:splash src="res/screen/android/screen-ldpi-portrait.png"       gap:platform="android" gap:qualifier="port-ldpi" />
+    <gap:splash src="res/screen/android/screen-mdpi-portrait.png"       gap:platform="android" gap:qualifier="port-mdpi" />
+    <gap:splash src="res/screen/android/screen-hdpi-portrait.png"       gap:platform="android" gap:qualifier="port-hdpi" />
+    <gap:splash src="res/screen/android/screen-xhdpi-portrait.png"      gap:platform="android" gap:qualifier="port-xhdpi" />
+    <gap:splash src="res/screen/ios/screen-iphone-portrait.png"         gap:platform="ios"     width="320" height="480" />
+    <gap:splash src="res/screen/ios/screen-iphone-portrait-2x.png"      gap:platform="ios"     width="640" height="960" />
+    <gap:splash src="res/screen/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios"     width="640" height="1136" />
+    <gap:splash src="res/screen/ios/screen-ipad-portrait.png"           gap:platform="ios"     width="768" height="1024" />
+    <gap:splash src="res/screen/ios/screen-ipad-landscape.png"          gap:platform="ios"     width="1024" height="768" />
+
+</widget>
