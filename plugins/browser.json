@@ -7,12 +7,6 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "com.vinfo.carwash"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.vinfo.carwash"
-        },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.vinfo.carwash"
         },
@@ -22,10 +16,16 @@
         "cordova-plugin-dialogs": {
             "PACKAGE_NAME": "com.vinfo.carwash"
         },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.vinfo.carwash"
+        },
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.vinfo.carwash"
         },
         "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.vinfo.carwash"
+        },
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.vinfo.carwash"
         },
         "cordova-plugin-x-socialsharing": {
