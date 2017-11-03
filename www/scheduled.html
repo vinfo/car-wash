@@ -12,7 +12,7 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700%7CSatisfy%7CHind:700">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
 		<!--[if lt IE 10]>
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="javascript:if(confirm('https://windows.microsoft.com/en-US/internet-explorer/\n\nThis file was not retrieved because it was filtered out by your project settings.\n\nWould you like to open it from the server?'))window.location='https://windows.microsoft.com/en-US/internet-explorer/'"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <script src="js/html5shiv.min.js"></script>
@@ -38,32 +38,10 @@
               <div class="rd-navbar-nav-wrap">
                 <!-- RD Navbar Nav-->
                 <ul class="rd-navbar-nav">
-                  <li class="active"><a href="index.html">Inicio</a></li>
-                  <li><a href="about.html"><span>Quienes somos</span></a></li>
-                  <li><a href="index.html#">Servicios</a>
-                    <!-- RD Navbar Megamenu-->
-                    <ul class="rd-navbar-megamenu">
-                      <li>
-                        <h6>Nuestros servicios</h6>
-                        <ul>
-                          <li><a href="exterior-full-wash.html"><span>Lavado Exterior</span></a></li>
-                          <li><a href="interior-full-wash.html"><span>Lavado Interior</span></a></li>
-                          <li><a href="waxing.html"><span>Lavado Completo</span></a></li>
-                        </ul>
-                      </li>                        
-                      <li>
-                        <h6>Agendamiento</h6>
-                        <ul>
-                          <li><a href="scheduled.html"><span>Agendar cita</span></a></li>
-                        </ul>
-                      </li>
-
-                    </ul>
-                  </li>                    
-                  <li><a href="prices.html"><span>Precios</span></a></li>
-                  <li class="rd-navbar-brand brand-offset"><a class="brand-name" href="index.html"><img src="images/logo-180x105.png" alt="" width="180" height="105"/></a></li> 
-                  <li><a href="contact-us.html"><span>Contáctenos</span></a></li>
-                  <li><a href="login.html"><span>Mí Cuenta</span></a></li>
+                  <li><a href="index.html">Inicio</a></li>
+                  <li><a href="services.html">Servicios</a></li>
+                  <li class="rd-navbar-brand brand-offset"><a class="brand-name" href="index.html"><img src="images/logo-180x105.png" alt="" width="180" height="105"/></a></li>                    
+                  <li class="active"><a href="login.html"><span>Mí Cuenta</span></a></li>
                 </ul>
               </div>
             </div>
@@ -76,11 +54,7 @@
       <div class="shell">
         <div class="range">
           <div class="cell-xs-12">
-            <h1>Checkout</h1>
-            <ul class="breadcrumbs-custom">
-              <li><a class="link" href="index.html">Inicio</a></li>
-              <li class="active">Agendar Cita</li>
-            </ul>
+            <h1>Agendar Cita</h1>
           </div>
         </div>
       </div>
@@ -88,62 +62,54 @@
 
     <section class="checkout-box section-md bg-white">
       <div class="shell">
-        <h3>Agendar Cita</h3>
-        <div class="range text-sm-left">
-          <div class="cell-md-6">
-            <h6>Fecha Agendamiento</h6>
-            <div id="datepicker"></div>
-          </div>          
-          <div class="cell-md-6">
-            <h6>Datos Personales</h6>
-            <form class="rd-mailform">
+        <form class="rd-mailform">
+          <div class="range text-sm-left">
+            <div class="cell-md-6">
+              <h6>Fecha Agendamiento</h6>
+              <div class="rd-mailform-inline-flex">
+                <div class="form-wrap">                  
+                  <input class="form-input" id="forms-day" type="date" name="day" data-constraints="@Required">
+                </div>
+                <div class="form-wrap">
+                  <input class="form-input" id="forms-hour" type="time" name="hour" data-constraints="@Required">
+                </div>
+              </div>
+            </div>          
+            <div class="cell-md-6">
+              <h6>Datos Personales</h6>            
               <div class="rd-mailform-inline-flex">
                 <div class="form-wrap">
-                  <label class="form-label" for="forms-name">Nombres</label>
-                  <input class="form-input" id="forms-name" type="text" name="name" data-constraints="@Required">
+                  <input class="form-input" id="forms-name" type="text" name="name" data-constraints="@Required" placeholder="Nombres">
                 </div>
                 <div class="form-wrap">
-                  <label class="form-label" for="forms-last-name">Apellidos</label>
-                  <input class="form-input" id="forms-last-name" type="text" name="last-name" data-constraints="@Required">
+                  <input class="form-input" id="forms-last-name" type="text" name="last-name" data-constraints="@Required" placeholder="Apellidos">
+                </div>
+                <div class="form-wrap">
+                  <input class="form-input" id="forms-email" type="email" name="email" data-constraints="@Email @Required" placeholder="E-mail">
+                </div>
+                <div class="form-wrap">
+                  <input class="form-input" id="forms-phone" type="text" name="phone" data-constraints="@Numeric" placeholder="Teléfono">
+                </div>
+                <div class="form-wrap">
+                  <input class="form-input" id="forms-cellphone" type="text" name="cellphone" data-constraints="@Numeric @Required" placeholder="Celular">
+                </div>
+                <div class="form-wrap">
+                  <input class="form-input" id="forms-street" type="text" name="name" data-constraints="@Required" placeholder="Dirección completa">
+                </div>
+                <div class="form-wrap">
+                  <input class="form-input" id="forms-town" type="text" name="name" data-constraints="@Required" placeholder="Ciudad">
                 </div>
               </div>
-              <div class="rd-mailform-inline-flex">
-                <div class="form-wrap">
-                  <label class="form-label" for="forms-email">Empresa</label>
-                  <input class="form-input" id="forms-company-name" type="text" name="last-name" data-constraints="@Required">
-                </div>
-                <div class="form-wrap">
-                  <label class="form-label" for="forms-email">E-mail</label>
-                  <input class="form-input" id="forms-email" type="email" name="email" data-constraints="@Email @Required">
-                </div>
-              </div>                
-              <div class="rd-mailform-inline-flex">
-                <div class="form-wrap">
-                  <label class="form-label" for="forms-phone">Teléfono: <span class="text-gray-dark">+4 12345678</span>
-                  </label>
-                  <input class="form-input" id="forms-phone" type="text" name="phone" data-constraints="@Numeric @Required">
-                </div>
-                <div class="form-wrap">
-                  <label class="form-label" for="forms-cellphone">Celular</label>
-                  <input class="form-input" id="forms-cellphone" type="text" name="cellphone" data-constraints="@Numeric @Required">
-                </div>
-              </div>
-              <div class="form-wrap">
-                <label class="form-label" for="forms-street">Dirección completa</label>
-                <input class="form-input" id="forms-street" type="text" name="name" data-constraints="@Required">
-              </div>
-              <div class="form-wrap">
-                <label class="form-label" for="forms-town">Ciudad</label>
-                <input class="form-input" id="forms-town" type="text" name="name" data-constraints="@Required">
-              </div>
+
+
               <div class="form-wrap">
                 <label class="checkbox-inline">
                   <input name="input-group-radio" value="checkbox-1" type="checkbox" checked>Crear cuenta
                 </label>
               </div>
-              <button class="button button-sm button-primary" type="submit">Registrar Cita</button>
-            </form>
-          </div>
+              <button class="button button-sm button-primary" type="submit">Registrar Cita</button>            
+            </div>
+          </form>
         </div>
         <div class="range text-sm-left range-20">
           <div class="cell-xs-12">
@@ -151,7 +117,7 @@
           </div>
           <div class="cell-sm-6 text-sm-right">
             <div class="payment-box">                
-              <div class="group-xs"><a class="link link-img" href="index.html#"><img src="images/payment-1-66x42.jpg" alt="" width="66" height="42"/></a><a class="link link-img" href="index.html#"><img src="images/payment-2-66x42.jpg" alt="" width="66" height="42"/></a><a class="link link-img" href="index.html#"><img src="images/payment-3-66x42.jpg" alt="" width="66" height="42"/></a><a class="link link-img" href="index.html#"><img src="images/payment-4-66x42.jpg" alt="" width="66" height="42"/></a><a class="link link-img" href="index.html#"><img src="images/payment-5-66x42.jpg" alt="" width="66" height="42"/></a></div>
+              <div class="group-xs"><a class="link link-img" href="index.html#"><img src="images/payment-1-66x42.jpg" alt="" width="66" height="42"/></a><a class="link link-img" href="index.html#"><img src="images/payment-2-66x42.jpg" alt="" width="66" height="42"/></a><a class="link link-img" href="index.html#"><img src="images/payment-4-66x42.jpg" alt="" width="66" height="42"/></a><a class="link link-img" href="index.html#"><img src="images/payment-5-66x42.jpg" alt="" width="66" height="42"/></a></div>
             </div>
           </div>
         </div>
@@ -160,7 +126,7 @@
     <!-- Page Footer-->
     <footer class="page-footer text-center text-center copyright">
       <div class="shell">
-        <p>CleanMotor &#169; <span id="copyright-year"></span> <a class="link link-white" href="privacy-policy.html">Privacy Policy</a>
+        <p>CleanMotor &#169; <span id="copyright-year"></span> <a class="link link-white" href="privacy-policy.html">Política de Privacidad</a>
         </p>
       </div>
     </footer>
@@ -205,11 +171,10 @@
   <!-- Java script-->
   <script src="js/core.min.js"></script>
   <script src="js/script.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );    
+    $( function() {
+
+    } );    
   </script>
 </body>
 </html>
