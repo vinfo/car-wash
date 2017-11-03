@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
     xmlns:gap = "http://phonegap.com/ns/1.0"
-    id        = "com.vinfo.carwash"
+    id        = "com.vinfo.drywashing"
     versionCode = "1"
     version     = "1.0.1"
     versionName = "1.0.1" >
-    <name>CarWash</name>
+    <name>DRYWASHING</name>
     <description>
-        Sistema de servicios de lavado de vehículos en Colombia.
+        Sistema de servicios de lavado en seco de vehículos en Colombia.
     </description>
     <author email="victor.valencia@gmail.com" href="http://vinfoweb.com">
         Vinfoweb Team
