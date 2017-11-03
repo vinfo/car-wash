@@ -2,7 +2,7 @@
 <html class="wide wow-animation" lang="en">
 <head>
   <!-- Site Title-->
-  <title>Agendamiento</title>
+  <title>Agendamiento - .:: DryWashing ::.</title>
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,7 +38,7 @@
               <div class="rd-navbar-nav-wrap">
                 <!-- RD Navbar Nav-->
                 <ul class="rd-navbar-nav">
-                  <li><a href="index.html">Inicio</a></li>
+                  <li><a href="index.html#quienes">Quienes Somos</a></li>
                   <li><a href="services.html">Servicios</a></li>
                   <li class="rd-navbar-brand brand-offset"><a class="brand-name" href="index.html"><img src="images/logo-180x105.png" alt="" width="180" height="105"/></a></li>                    
                   <li class="active"><a href="login.html"><span>Mí Cuenta</span></a></li>
@@ -54,7 +54,7 @@
       <div class="shell">
         <div class="range">
           <div class="cell-xs-12">
-            <h1>Agendar Cita</h1>
+            <h1 class="txt-register">Agendar Cita</h1>
           </div>
         </div>
       </div>
@@ -64,16 +64,24 @@
       <div class="shell">
         <form class="rd-mailform">
           <div class="range text-sm-left">
-            <div class="cell-md-6">
+            <div class="cell-md-6 register">
               <h6>Fecha Agendamiento</h6>
               <div class="rd-mailform-inline-flex">
                 <div class="form-wrap">                  
+                  <select class="form-input" id="service" name="service">
+                    <option>Lavado Sencillo</option>
+                    <option selected="selected">Lavado Full</option>
+                    <option>Lavado Re Full</option>
+                  </select>
+                </div>                
+                <div class="form-wrap">                  
                   <input class="form-input" id="forms-day" type="date" name="day" data-constraints="@Required">
                 </div>
+                <a id="registro" name="registro"></a>
                 <div class="form-wrap">
                   <input class="form-input" id="forms-hour" type="time" name="hour" data-constraints="@Required">
                 </div>
-              </div>
+              </div>              
             </div>          
             <div class="cell-md-6">
               <h6>Datos Personales</h6>            
@@ -102,16 +110,16 @@
               </div>
 
 
-              <div class="form-wrap">
+              <div class="form-wrap register">
                 <label class="checkbox-inline">
                   <input name="input-group-radio" value="checkbox-1" type="checkbox" checked>Crear cuenta
                 </label>
               </div>
-              <button class="button button-sm button-primary" type="submit">Registrar Cita</button>            
+              <button class="button button-sm button-primary txt-register" type="submit">Registrar Cita</button>            
             </div>
           </form>
         </div>
-        <div class="range text-sm-left range-20">
+        <div class="range text-sm-left range-20 register">
           <div class="cell-xs-12">
             <h6>Medios de Pago</h6>
           </div>
@@ -131,49 +139,19 @@
       </div>
     </footer>
   </div>
-  <!-- Global Mailform Output-->
-  <div class="snackbars" id="form-output-global"></div>
-  <!-- PhotoSwipe Gallery-->
-  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="pswp__bg"></div>
-    <div class="pswp__scroll-wrap">
-      <div class="pswp__container">
-        <div class="pswp__item"></div>
-        <div class="pswp__item"></div>
-        <div class="pswp__item"></div>
-      </div>
-      <div class="pswp__ui pswp__ui--hidden">
-        <div class="pswp__top-bar">
-          <div class="pswp__counter"></div>
-          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-          <button class="pswp__button pswp__button--share" title="Share"></button>
-          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-          <div class="pswp__preloader">
-            <div class="pswp__preloader__icn">
-              <div class="pswp__preloader__cut">
-                <div class="pswp__preloader__donut"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-          <div class="pswp__share-tooltip"></div>
-        </div>
-        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
-        <div class="pswp__caption">
-          <div class="pswp__caption__cent"></div>
-        </div>
-      </div>
-    </div>
-  </div>
   <!-- Java script-->
   <script src="js/core.min.js"></script>
   <script src="js/script.js"></script>
+  <script type="text/javascript" src="js/includes.js?v=1.0.0"></script>
   <script>
     $( function() {
-
+        var action= getUrlParameter("action");
+        if(action){
+          $(".txt-register").html("Registrarse");
+          $(".register").hide();
+        }else{
+          $(".register").show();          
+        }
     } );    
   </script>
 </body>

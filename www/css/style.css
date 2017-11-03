@@ -4566,3 +4566,7 @@ h3 + .big {
 
 .recaptcha > div {
   margin-left: auto; }
+  
+.register{
+	display: none;
+}
