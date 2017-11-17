@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+<head>
+  <!-- Site Title-->
+  <title>Login - .:: DryWashing ::.</title>
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <script src="js/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script><link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <!-- Stylesheets-->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700%7CSatisfy%7CHind:700">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <!-- Page-->
+  <div class="page text-center">
+    <!-- Page Header-->
+    <header class="page-header">
+      <!-- RD Navbar-->
+      <div class="rd-navbar-wrap">
+        <nav class="rd-navbar rd-navbar-default" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fullwidth" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-md-stick-up-offset="50px" data-lg-stick-up-offset="60px" data-stick-up="true" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true">
+          <div class="rd-navbar-inner">
+            <!-- RD Navbar Panel-->
+            <div class="rd-navbar-panel">
+              <!-- RD Navbar Toggle-->
+              <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+              <!-- RD Navbar Brand-->
+              <div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img src="images/logo-fixed-234x49.png" alt="" width="234" height="49"/></a></div>
+            </div>
+            <div class="rd-navbar-aside-right">
+              <div class="rd-navbar-nav-wrap">
+                <!-- RD Navbar Nav-->
+                <ul class="rd-navbar-nav">
+                  <li><a href="index.html#quienes">Quienes Somos</a></li>
+                  <li><a href="services.html">Servicios</a></li>
+                  <li class="rd-navbar-brand brand-offset"><a class="brand-name" href="index.html"><img src="images/logo-180x105.png" alt="" width="180" height="105"/></a></li>                    
+                  <li class="active"><a href="login.html"><span>Mí Cuenta</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- Breadcrumbs & Page title-->
+    <section class="section-lg breadcrumbs-section text-center bg-image-1">
+      <div class="shell">
+        <div class="range">
+          <div class="cell-xs-12">
+            <h1>Mí Cuenta</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-md">
+      <div class="shell">
+        <div class="range range-xs-center range">
+          <div class="cell-md-6">
+            <p class="big">En esta sección podrá administrar sus datos de contacto y ver el historial de su cuenta y afiliados.</p>
+          </div>
+          <div class="cell-md-8">
+            <!-- RD Mailform-->
+            <form id="frm-login" name="frm-login" class="rd-mailform text-left rd-mailform-inline-flex">
+              <div class="form-wrap">
+                <label class="form-label" for="identification">Identificación</label>
+                <input class="form-input" id="identification" type="text" name="identification" data-constraints="@Required">
+              </div>
+              <div class="form-wrap">
+                <label class="form-label" for="password">Contraseña</label>
+                <input class="form-input" id="password" type="password" name="password" data-constraints="@Required">
+              </div>              
+              <div style="text-align: center;">
+                <p><button class="button button-sm button-primary" type="submit">Ingresar</button></p>
+                <p><a href="scheduled.html?action=register#registro">Registrarse</a></p></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Page Footer-->
+    <footer class="page-footer text-center text-center copyright">
+      <div class="shell">
+        <p>drywashing.com.co &#169; <span id="copyright-year"></span> <a class="link link-white" href="privacy-policy.html">Política de Privacidad</a>
+        </p>
+      </div>
+    </footer>
+  </div>
+  <!-- Java script-->
+  <script src="js/core.min.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    $( function() {
+      $( "#frm-login" ).submit(function( event ) {
+        event.preventDefault();
+        var identification= $("#identification").val();
+        var password= $("#password").val();
+        alert(identification);
+        if(identification!=""&&password!=""){
+          //alert(2);
+        }
+      });
+    } );    
+  </script>  
+</body>
+</html>
