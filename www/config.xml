@@ -14,11 +14,6 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-
-	<config-file platform="android" parent="/manifest" mode="merge">
-	    <application android:debuggable="false"/>
-	</config-file>    
-
     <preference name="EnableViewportScale" value="true"/>
     <preference name="orientation" value="portrait" />
     <preference name="android-build-tool" value="gradle" />
