@@ -55,32 +55,131 @@
         </div>
       </div>
     </section>
-
-    <section class="section-md">
+    <section class="section-md no-login">
       <div class="shell">
         <div class="range range-xs-center range">
           <div class="cell-md-6">
-            <p class="big">En esta sección podrá administrar sus datos de contacto y ver el historial de su cuenta y afiliados.</p>
+            <p class="big no-login">Ingresa tu identificacíón y clave para ver tu historial.</p>           
           </div>
           <div class="cell-md-8">
             <!-- RD Mailform-->
             <form id="frm-login" name="frm-login" class="rd-mailform text-left rd-mailform-inline-flex">
               <div class="form-wrap">
-                <label class="form-label" for="identification">Identificación</label>
-                <input class="form-input" id="identification" type="text" name="identification" data-constraints="@Required">
-              </div>
-              <div class="form-wrap">
-                <label class="form-label" for="password">Contraseña</label>
-                <input class="form-input" id="password" type="password" name="password" data-constraints="@Required">
-              </div>              
-              <div style="text-align: center;">
+                <input class="form-input" id="identification" type="text" name="identification" data-constraints="@Required" placeholder="Identificación"><br/>
+                <input class="form-input" id="password" type="password" name="password" data-constraints="@Required" placeholder="Clave">
+                <p class="msg hidde red">Usuario/Contraseña no validos</p>              
+                <input type="hidden" name="action" value="loginUser">
                 <p><button class="button button-sm button-primary" type="submit">Ingresar</button></p>
-                <p><a href="scheduled.html?action=register#registro">Registrarse</a></p></div>
+                <p><a href="scheduled.html?action=register#registro">Registrarse</a></p>
+              </div>
             </form>
           </div>
         </div>
       </div>
     </section>
+    <section class="section-md bg-white login">
+      <form id="frm-register" name="frm-register" class="rd-mailform text-right" data-form-output="form-output-global" data-form-type="forms" action="" novalidate>
+        <div class="shell">
+          <div class="range range-50 text-sm-left">
+            <div class="cell-md-6">
+              <h6>Datos Personales</h6>
+              <div class="rd-mailform-inline-flex">
+                <div class="form-wrap">
+                  <input class="form-input" id="identification_u" type="text" name="identification_u" data-constraints="@Required" placeholder="Identificación" readonly>
+                </div>
+                <div class="form-wrap">
+                  <input class="form-input" id="names_u" type="text" name="names_u" data-constraints="@Required" placeholder="Nombres">
+                </div>
+              </div>
+              <div class="rd-mailform-inline-flex">
+                <div class="form-wrap">
+                  <input class="form-input" id="lastnames_u" type="text" name="lastnames_u" data-constraints="@Required" placeholder="Apellidos">
+                </div>
+                <div class="form-wrap">
+                  <input class="form-input" id="email_u" type="email" name="email_u" data-constraints="@Email @Required" placeholder="E-mail">
+                </div>               
+              </div>
+              <div class="rd-mailform-inline-flex">
+                <div class="form-wrap">
+                  <input class="form-input" id="phone_u" type="text" name="phone_u" data-constraints="@Numeric" placeholder="Teléfono">
+                </div>
+                <div class="form-wrap">
+                  <input class="form-input" id="cellphone_u" type="text" name="cellphone_u" data-constraints="@Numeric @Required" placeholder="Celular">
+                </div>                  
+              </div> 
+              <div class="rd-mailform-inline-flex">
+                <div class="form-wrap">
+                  <input class="form-input" id="address_u" type="text" name="address_u" data-constraints="@Required" placeholder="Dirección completa">
+                </div>
+                <div class="form-wrap">
+                  <input class="form-input" id="city_u" type="text" name="city_u" data-constraints="@Required" placeholder="Ciudad">
+                </div> 
+              </div>
+              <div class="form-wrap">
+                <input class="form-input" id="password_u" type="password" name="password_u" placeholder="Modificar contraseña">
+              </div>              
+              <p style="text-align: left;">Número boleta con la que participas en nuestras rifas: <b id="boleta_u"></b></p>
+              <button class="button button-sm button-primary txt-register" type="submit">Actualizar Datos</button>
+              <input type="hidden" name="action" value="updateUser"/>
+              <input type="hidden" name="id_u" value="" id="id_u"/>
+              <p><a href="#!" class="logout"><< Cerrar sesión >></a></p>
+            </div>
+            <div class="cell-md-6">
+              <div class="shell">
+                <div><p><a class="add-user"><img src="images/add.png"> Referir nuevo usuario</a></p></div>
+                <div class="rd-mailform-inline-flex new-refer">
+                  <div class="form-wrap">
+                    <input class="form-input" id="identification_u2" type="text" name="identification_u2" placeholder="Ingresar Identificación">
+                  </div>
+                  <div class="form-wrap">
+                    <a class="button button-sm button-primary btn-refer">Registra referido</a>
+                  </div>
+                </div>
+
+                <div class="panel-custom-group-wrap">
+                  <div class="panel-custom-group accordion-custom text-left" id="accordion1" role="tablist" aria-multiselectable="true">
+                    <!-- Bootstrap panel-->
+                    <div class="panel panel-custom panel-custom-default panel-active">
+                      <div class="panel-custom-heading" id="accordion1Heading1" role="tab">
+                        <p class="panel-custom-title"><a class="panel-custom-arrow" role="button" data-toggle="collapse" data-parent="#accordion1" href="index.html#accordion1Collapse1" aria-controls="accordion1Collapse1" aria-expanded="true">Mís Referidos</a>
+                        </p>
+                      </div>
+                      <div class="panel-custom-collapse collapse in" id="accordion1Collapse1" role="tabpanel" aria-labelledby="accordion1Heading1">
+                        <div class="panel-custom-body">
+                          <table id="refers" class="table-data">
+                            <thead>
+                              <tr><th>Fecha</th><th>Identificación</th><th>Estado</th></tr>
+                            </thead>
+                            <tbody></tbody>
+                          </table> 
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Bootstrap panel-->
+                    <div class="panel panel-custom panel-custom-default">
+                      <div class="panel-custom-heading" id="accordion2Heading2" role="tab">
+                        <p class="panel-custom-title"><a class="collapsed panel-custom-arrow" role="button" data-toggle="collapse" data-parent="#accordion2" href="index.html#accordion2Collapse2" aria-controls="accordion2Collapse2">Historial de Lavadas</a>
+                        </p>
+                      </div>
+                      <div class="panel-custom-collapse collapse" id="accordion2Collapse2" role="tabpanel" aria-labelledby="accordion2Heading2">
+                        <div class="panel-custom-body">
+                          <table id="reserveds" class="table-data">
+                            <thead>
+                              <tr><th>Fecha</th><th>Tipo</th><th>Valor($)</th><th>Estado</th></tr>
+                            </thead>
+                            <tbody></tbody>
+                          </table>                 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>            
+          </div>
+        </div>
+      </form>
+    </section>   
     <!-- Page Footer-->
     <footer class="page-footer text-center text-center copyright">
       <div class="shell">
@@ -94,16 +193,127 @@
   <script src="js/script.js"></script>
   <script>
     $( function() {
+      getLogin();
+      $( ".logout" ).click(function() {
+        localStorage.clear();
+        window.location.replace("index.html");
+      });
+      $( ".add-user" ).click(function() {
+        $( ".new-refer" ).css("display","inline-flex");
+      });
+      $( ".btn-refer" ).click(function() {
+        var identification_u=$("#identification_u2").val();
+        if(identification_u!=""){
+          $.ajax({
+            type: "POST",
+            url: "http://drywashing.com.co/lib/ajax_service_mobil.php",
+            data: "action=setRefer&id_u="+localStorage.id_u+"&identification_u="+identification_u,
+            dataType:'JSON',
+            success: function(msg){
+              if(msg.status==200){
+                alert("Datos registrados exitosamente.");
+                $("#identification_u2").val("");
+                location.reload();
+              }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) { 
+              alert("Sistema no disponible. Reintentar en un momento.");
+            }
+          });
+        }
+      });
+      $( ".txt-register" ).click(function(event) {
+        event.preventDefault();
+        var errors= $(".has-error").length;
+        var reg= $(".register").is(':visible');
+        if(errors==0||(!reg&&errors==2)){
+          $.ajax({
+            type: "POST",
+            url: "http://drywashing.com.co/lib/ajax_service_mobil.php",
+            data: $("#frm-register").serialize(),
+            dataType:'JSON',
+            success: function(msg){
+              if(msg.status==200){
+                alert("Datos actualizado exitosamente.");
+              }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) { 
+              alert("Sistema no disponible. Reintentar en un momento.");
+            }
+          });
+        }
+      });    
       $( "#frm-login" ).submit(function( event ) {
         event.preventDefault();
         var identification= $("#identification").val();
         var password= $("#password").val();
-        alert(identification);
         if(identification!=""&&password!=""){
-          //alert(2);
+          $.ajax({
+            type: "POST",
+            url: "http://drywashing.com.co/lib/ajax_service_mobil.php",
+            data: $("#frm-login").serialize(),
+            dataType:'JSON',
+            success: function(msg){              
+              if(msg.data!=null){
+                localStorage.setItem("id_u",msg.data.id_u);
+                getLogin();
+              }else{
+                $(".msg").show();
+              }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) { 
+              alert("Sistema no disponible. Reintentar en un momento.");
+            }
+          });
         }
-      });
-    } );    
+      });    
+    });
+    function getLogin(){
+      if(localStorage.id_u){
+        $(".login").show();
+        $(".no-login").hide();
+        $("#id_u").val(localStorage.id_u);
+        $.ajax({
+          type: "POST",
+          url: "http://drywashing.com.co/lib/ajax_service_mobil.php",
+          data: "action=getUserData&id_u="+localStorage.id_u,
+          dataType:'JSON',
+          success: function(msg){            
+            if(msg.data!=null){
+              $("#identification_u").val(msg.data.identification_u);
+              $("#names_u").val(msg.data.names_u);
+              $("#lastnames_u").val(msg.data.lastnames_u);
+              $("#email_u").val(msg.data.email_u);
+              $("#phone_u").val(msg.data.phone_u);
+              $("#cellphone_u").val(msg.data.cellphone_u);
+              $("#address_u").val(msg.data.address_u);
+              $("#city_u").val(msg.data.city_u);
+              $("#boleta_u").html(msg.data.boleta_u);
+              var reserveds='';
+              if(msg.data.reserveds){               
+                $.each(msg.data.reserveds, function( index, value ) {
+                  reserveds+='<tr><td>'+value.date_s+' '+value.hour_s+'</td><td>'+value.type_s+'</td><td>'+value.value_s+'</td><td>'+value.status_s+'</td></tr>';
+                });
+                $("#reserveds > tbody").html(reserveds);
+              }
+              var refers='';
+              if(msg.data.refers){               
+                $.each(msg.data.refers, function( index, value ) {
+                  refers+='<tr><td>'+value.date_r+'</td><td>'+value.identification_r+'</td><td>'+value.status_r+'</td></tr>';
+                });
+                $("#refers > tbody").html(refers);
+              }              
+            }
+          },
+          error: function(XMLHttpRequest, textStatus, errorThrown) { 
+            alert("Sistema no disponible. Reintentar en un momento.");
+          }
+        });         
+      }else{
+        $(".login").hide();
+        $(".no-login").show();
+      }
+    }   
   </script>  
 </body>
 </html>

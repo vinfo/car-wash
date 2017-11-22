@@ -220,7 +220,8 @@
   -ms-user-select: none;
   user-select: none; }
   .owl-carousel .owl-item > .owl-item {
-    width: 100%;
+    width: 95%;
+    margin: 1%;
     text-align: center; }
 
 .owl-carousel.owl-text-select-on .owl-item {
@@ -4567,9 +4568,20 @@ h3 + .big {
 .recaptcha > div {
   margin-left: auto; }
   
-.register{
+.register,.login,.hidde,.no-login,.new-refer,.personales{
 	display: none;
+}
+.red{
+	color: red;
 }
 .form-wrap{
 	margin-bottom:4px!important;
+}
+.table-data{
+	border: 1px solid #ccc;
+	width: 100%;
+}
+.table-data  th, td{
+	padding: 4px;
+	border: 1px solid #ccc;
 }

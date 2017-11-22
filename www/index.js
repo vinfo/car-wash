@@ -3,7 +3,6 @@ document.addEventListener("pause", onPause, false);
 function onDeviceReady() {
     checkConnection();    
     getDeviceProperty();
-    cordova.plugins.notification.badge;
   }
   function getDeviceProperty() {
     console.log("getDeviceProperty");    
