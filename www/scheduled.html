@@ -67,13 +67,21 @@
               <div class="register">
                <a id="registro" name="registro"></a>
                <h6>Fecha Agendamiento</h6>
-               <div class="form-wrap">
+              <div class="rd-mailform-inline-flex">
+                <div class="form-wrap">
                 <select id="type_s" name="type_s" required>
                   <option value="0">Lavado Sencillo</option>
                   <option value="1" selected="selected">Lavado Full</option>
                   <option value="2">Lavado Re Full</option>
                 </select>
-              </div>
+                </div>
+                <div class="form-wrap">
+                <select id="type_v_s" name="type_v_s" required>
+                  <option value="0" selected="selected">Automovil</option>
+                  <option value="1">Camioneta</option>
+                </select>
+                </div>
+              </div>              
               <div class="rd-mailform-inline-flex">
                 <div class="form-wrap">
                   <input class="form-input" id="date_s" type="date" name="date_s" data-constraints="@Required" placeholder="dd/mm/aaaa">
@@ -83,7 +91,7 @@
                 </div>
               </div>
             </div>
-            <div class="personales">
+            <div>
             <h6>Datos Personales</h6>
             <div class="rd-mailform-inline-flex">
               <div class="form-wrap">
@@ -117,8 +125,8 @@
                 <input class="form-input" id="city_u" type="text" name="city_u" data-constraints="@Required" placeholder="Ciudad">
               </div>
             </div>
-            <p style="text-align: left;">Ingresa un número para participar de nuestras espectaculares rifas</p>
-            <div class="form-wrap">
+            <p class="personales" style="text-align: left;">Ingresa un número para participar de nuestras espectaculares rifas</p>
+            <div class="form-wrap personales">
               <input class="form-input" id="boleta_u" type="text" name="boleta_u" data-constraints="@Required" maxlength="4" placeholder="Número Boleta">
             </div>
             </div>
@@ -150,12 +158,13 @@
       $(".personales").show();
     }else{
       $("#id_u").val(localStorage.id_u);
+      getLogin();
     }
     $("#frm-register").submit(function() {
       var errors= $(".has-error").length;
       var reg= $(".register").is(':visible');
         //alert(errors +" "+reg);
-        if(errors==0||(!reg&&errors==2)){
+        if(errors==0||(!reg&&errors==2)||(localStorage.id_u&&errors==1)){
           $.ajax({
             type: "POST",
             url: "http://drywashing.com.co/lib/ajax_service_mobil.php",
@@ -183,6 +192,37 @@
       $(".register").show();
     }
   } );
+    function getLogin(){
+      if(localStorage.id_u){
+        $(".login").show();
+        $(".no-login").hide();
+        $("#id_u").val(localStorage.id_u);
+        $.ajax({
+          type: "POST",
+          url: "http://drywashing.com.co/lib/ajax_service_mobil.php",
+          data: "action=getUserData&id_u="+localStorage.id_u,
+          dataType:'JSON',
+          success: function(msg){            
+            if(msg.data!=null){
+              $("#identification_u").val(msg.data.identification_u);
+              $("#names_u").val(msg.data.names_u);
+              $("#lastnames_u").val(msg.data.lastnames_u);
+              $("#email_u").val(msg.data.email_u);
+              $("#phone_u").val(msg.data.phone_u);
+              $("#cellphone_u").val(msg.data.cellphone_u);
+              $("#address_u").val(msg.data.address_u);
+              $("#city_u").val(msg.data.city_u);           
+            }
+          },
+          error: function(XMLHttpRequest, textStatus, errorThrown) { 
+            alert("Sistema no disponible. Reintentar en un momento.");
+          }
+        });         
+      }else{
+        $(".login").hide();
+        $(".no-login").show();
+      }
+    }   
 </script>
 </body>
 </html>
