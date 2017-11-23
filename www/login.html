@@ -65,12 +65,12 @@
             <!-- RD Mailform-->
             <form id="frm-login" name="frm-login" class="rd-mailform text-left rd-mailform-inline-flex">
               <div class="form-wrap">
-                <input class="form-input" id="identification" type="text" name="identification" data-constraints="@Required" placeholder="Identificación"><br/>
-                <input class="form-input" id="password" type="password" name="password" data-constraints="@Required" placeholder="Clave">
+                <input class="form-input required" id="identification" type="text" name="identification" placeholder="Identificación"><br/>
+                <input class="form-input required" id="password" type="password" name="password" placeholder="Clave">
                 <p class="msg hidde red">Usuario/Contraseña no validos</p>              
                 <input type="hidden" name="action" value="loginUser">
-                <p><button class="button button-sm button-primary" type="submit">Ingresar</button></p>
-                <p><a href="scheduled.html?action=register#registro">Registrarse</a></p>
+                <p><button class="button button-sm button-primary btn-login" type="none">Ingresar</button></p>
+                <p>¿No estas registrado?<br/><a href="scheduled.html?action=register#registro"><b>Registraste aquí</b></a></p>
               </div>
             </form>
           </div>
@@ -85,47 +85,52 @@
               <h6>Datos Personales</h6>
               <div class="rd-mailform-inline-flex">
                 <div class="form-wrap">
-                  <input class="form-input" id="identification_u" type="text" name="identification_u" data-constraints="@Required" placeholder="Identificación" readonly>
+                  <input class="form-input" id="identification_u" type="text" name="identification_u" placeholder="Identificación" readonly>
                 </div>
                 <div class="form-wrap">
-                  <input class="form-input" id="names_u" type="text" name="names_u" data-constraints="@Required" placeholder="Nombres">
+                  <input class="form-input required" id="names_u" type="text" name="names_u" placeholder="Nombres">
                 </div>
               </div>
               <div class="rd-mailform-inline-flex">
                 <div class="form-wrap">
-                  <input class="form-input" id="lastnames_u" type="text" name="lastnames_u" data-constraints="@Required" placeholder="Apellidos">
+                  <input class="form-input required" id="lastnames_u" type="text" name="lastnames_u" placeholder="Apellidos">
                 </div>
                 <div class="form-wrap">
-                  <input class="form-input" id="email_u" type="email" name="email_u" data-constraints="@Email @Required" placeholder="E-mail">
+                  <input class="form-input email required" id="email_u" type="email" name="email_u" placeholder="E-mail">
                 </div>               
               </div>
               <div class="rd-mailform-inline-flex">
                 <div class="form-wrap">
-                  <input class="form-input" id="phone_u" type="text" name="phone_u" data-constraints="@Numeric" placeholder="Teléfono">
+                  <input class="form-input number" id="phone_u" type="text" name="phone_u" placeholder="Teléfono">
                 </div>
                 <div class="form-wrap">
-                  <input class="form-input" id="cellphone_u" type="text" name="cellphone_u" data-constraints="@Numeric @Required" placeholder="Celular">
+                  <input class="form-input number required" id="cellphone_u" type="text" name="cellphone_u" placeholder="Celular">
                 </div>                  
               </div> 
               <div class="rd-mailform-inline-flex">
                 <div class="form-wrap">
-                  <input class="form-input" id="address_u" type="text" name="address_u" data-constraints="@Required" placeholder="Dirección completa">
+                  <input class="form-input required" id="address_u" type="text" name="address_u" placeholder="Dirección completa">
                 </div>
                 <div class="form-wrap">
-                  <input class="form-input" id="city_u" type="text" name="city_u" data-constraints="@Required" placeholder="Ciudad">
+                  <input class="form-input required" id="city_u" type="text" name="city_u" placeholder="Ciudad">
                 </div> 
               </div>
               <div class="form-wrap">
                 <input class="form-input" id="password_u" type="password" name="password_u" placeholder="Modificar contraseña">
               </div>              
-              <p style="text-align: left;">Número boleta con la que participas en nuestras rifas: <b id="boleta_u"></b></p>
-              <button class="button button-sm button-primary txt-register" type="submit">Actualizar Datos</button>
+              <p class="fila-boleta" style="text-align: left;">Número boleta con la que participas en nuestras rifas: <h3 id="boleta_u"></h3></p>
+              <button class="button button-sm button-primary btn-register" type="none">Actualizar Datos</button>
               <input type="hidden" name="action" value="updateUser"/>
               <input type="hidden" name="id_u" value="" id="id_u"/>
               <p><a href="#!" class="logout"><< Cerrar sesión >></a></p>
             </div>
             <div class="cell-md-6">
               <div class="shell">
+
+
+                <div class="panel-custom-group-wrap">
+                  <div class="panel-custom-group accordion-custom text-left" id="accordion1" role="tablist" aria-multiselectable="true">
+                    <!-- Bootstrap panel-->
                 <div><p><a class="add-user"><img src="images/add.png"> Referir nuevo usuario</a></p></div>
                 <div class="rd-mailform-inline-flex new-refer">
                   <div class="form-wrap">
@@ -134,11 +139,7 @@
                   <div class="form-wrap">
                     <a class="button button-sm button-primary btn-refer">Registra referido</a>
                   </div>
-                </div>
-
-                <div class="panel-custom-group-wrap">
-                  <div class="panel-custom-group accordion-custom text-left" id="accordion1" role="tablist" aria-multiselectable="true">
-                    <!-- Bootstrap panel-->
+                </div>                    
                     <div class="panel panel-custom panel-custom-default panel-active">
                       <div class="panel-custom-heading" id="accordion1Heading1" role="tab">
                         <p class="panel-custom-title"><a class="panel-custom-arrow" role="button" data-toggle="collapse" data-parent="#accordion1" href="index.html#accordion1Collapse1" aria-controls="accordion1Collapse1" aria-expanded="true">Mís Referidos</a>
@@ -156,6 +157,7 @@
                       </div>
                     </div>
                     <!-- Bootstrap panel-->
+                <div><p><a href="scheduled.html"><img src="images/add.png"> Agendar nueva cita</a></p></div>                    
                     <div class="panel panel-custom panel-custom-default">
                       <div class="panel-custom-heading" id="accordion2Heading2" role="tab">
                         <p class="panel-custom-title"><a class="collapsed panel-custom-arrow" role="button" data-toggle="collapse" data-parent="#accordion2" href="index.html#accordion2Collapse2" aria-controls="accordion2Collapse2">Historial de Lavadas</a>
@@ -191,6 +193,7 @@
   <!-- Java script-->
   <script src="js/core.min.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
   <script>
     $( function() {
       getLogin();
@@ -222,11 +225,11 @@
           });
         }
       });
-      $( ".txt-register" ).click(function(event) {
+      $( ".btn-register" ).click(function(event) {
         event.preventDefault();
-        var errors= $(".has-error").length;
-        var reg= $(".register").is(':visible');
-        if(errors==0||(!reg&&errors==2)){
+        var validator = $("#frm-register").validate({errorPlacement: function(error,element) {return true;}});
+        validator.form();
+        if(validator.valid()){
           $.ajax({
             type: "POST",
             url: "http://drywashing.com.co/lib/ajax_service_mobil.php",
@@ -242,12 +245,12 @@
             }
           });
         }
-      });    
-      $( "#frm-login" ).submit(function( event ) {
+      });
+    $( ".btn-login" ).click(function(event) {         
         event.preventDefault();
-        var identification= $("#identification").val();
-        var password= $("#password").val();
-        if(identification!=""&&password!=""){
+        var validator = $("#frm-login").validate({errorPlacement: function(error,element) {return true;}});
+        validator.form();
+        if(validator.valid()){         
           $.ajax({
             type: "POST",
             url: "http://drywashing.com.co/lib/ajax_service_mobil.php",
@@ -265,6 +268,9 @@
               alert("Sistema no disponible. Reintentar en un momento.");
             }
           });
+        }else{
+          var top = $('.error').first().position().top;
+          $(window).scrollTop( top );
         }
       });    
     });
@@ -288,7 +294,10 @@
               $("#cellphone_u").val(msg.data.cellphone_u);
               $("#address_u").val(msg.data.address_u);
               $("#city_u").val(msg.data.city_u);
-              $("#boleta_u").html(msg.data.boleta_u);
+              if(msg.data.boleta_u!="0"){
+                $(".fila-boleta").show();
+                $("#boleta_u").html(msg.data.boleta_u);
+              }
               var reserveds='';
               if(msg.data.reserveds){               
                 $.each(msg.data.reserveds, function( index, value ) {

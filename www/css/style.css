@@ -4568,11 +4568,15 @@ h3 + .big {
 .recaptcha > div {
   margin-left: auto; }
   
-.register,.login,.hidde,.no-login,.new-refer,.personales{
+.register,.login,.hidde,.no-login,.new-refer,.personales,.fila-boleta{
 	display: none;
 }
 .red{
 	color: red;
+}
+input.error,textarea.error,select.error {
+ border: 1px dotted red;
+ background-color:#FFCCCC!important; 
 }
 .form-wrap{
 	margin-bottom:4px!important;
