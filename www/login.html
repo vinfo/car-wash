@@ -135,9 +135,7 @@
                 <div class="rd-mailform-inline-flex new-refer">
                   <div class="form-wrap">
                     <input class="form-input" id="identification_u2" type="text" name="identification_u2" placeholder="Ingresar Identificación">
-                  </div>
-                  <div class="form-wrap">
-                    <a class="button button-sm button-primary btn-refer">Registra referido</a>
+                    <p><a class="button button-sm button-primary btn-refer">Registrar referido</a></p>
                   </div>
                 </div>                    
                     <div class="panel panel-custom panel-custom-default panel-active">
@@ -204,8 +202,11 @@
       $( ".add-user" ).click(function() {
         $( ".new-refer" ).css("display","inline-flex");
       });
+      $(document).on('keyup click',"#identification_u2", function () {
+        $(this).removeClass("error");
+      });      
       $( ".btn-refer" ).click(function() {
-        var identification_u=$("#identification_u2").val();
+        var identification_u=$("#identification_u2").val();        
         if(identification_u!=""){
           $.ajax({
             type: "POST",
@@ -223,6 +224,8 @@
               alert("Sistema no disponible. Reintentar en un momento.");
             }
           });
+        }else{
+          $("#identification_u2").addClass("error");
         }
       });
       $( ".btn-register" ).click(function(event) {
