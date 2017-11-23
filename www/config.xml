@@ -3,8 +3,8 @@
     xmlns:gap = "http://phonegap.com/ns/1.0"
     id        = "com.vinfo.drywashing"
     versionCode = "1"
-    version     = "1.0.1"
-    versionName = "1.0.1" >
+    version     = "1.0.2"
+    versionName = "1.0.2" >
     <name>DryWashing</name>
     <description>
         Lavado en seco de vehículos en Colombia. Dry Washing.
