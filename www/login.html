@@ -191,10 +191,15 @@
   <!-- Java script-->
   <script src="js/core.min.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/includes.js"></script>
   <script src="js/jquery.validate.min.js"></script>
   <script>
     $( function() {
       getLogin();
+      var identification_u= getUrlParameter("identification_u");
+      if(identification_u!=""){
+        $("#identification,#password").val(identification_u);
+      }
       $( ".logout" ).click(function() {
         localStorage.clear();
         window.location.replace("index.html");
@@ -219,9 +224,6 @@
                 $("#identification_u2").val("");
                 location.reload();
               }
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) { 
-              alert("Sistema no disponible. Reintentar en un momento.");
             }
           });
         }else{
@@ -242,9 +244,6 @@
               if(msg.status==200){
                 alert("Datos actualizado exitosamente.");
               }
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) { 
-              alert("Sistema no disponible. Reintentar en un momento.");
             }
           });
         }
@@ -260,15 +259,12 @@
             data: $("#frm-login").serialize(),
             dataType:'JSON',
             success: function(msg){              
-              if(msg.data!=null){
+              if(msg.data!=null&&msg.data.id_u!=""){
                 localStorage.setItem("id_u",msg.data.id_u);
                 getLogin();
               }else{
                 $(".msg").show();
               }
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) { 
-              alert("Sistema no disponible. Reintentar en un momento.");
             }
           });
         }else{
@@ -316,9 +312,6 @@
                 $("#refers > tbody").html(refers);
               }              
             }
-          },
-          error: function(XMLHttpRequest, textStatus, errorThrown) { 
-            alert("Sistema no disponible. Reintentar en un momento.");
           }
         });         
       }else{

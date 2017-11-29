@@ -176,12 +176,9 @@
               var identification_u= $("#identification_u").val();
               if(msg.status==200){
                 $('#frm-register')[0].reset();
-                alert("Datos registrados exitosamente.\nPronto nos pondremos en contacto.");
+                alert("Datos registrados exitosamente.\nPara ingresar al sistema utiliza tu identificación como usuario y clave.");
               }
               window.location.replace("login.html?identification_u="+identification_u);
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-              alert("Sistema no disponible. Reintentar en un momento.");
             }
           });
         }else {
